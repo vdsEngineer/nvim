@@ -30,5 +30,8 @@ require("lazy").setup({
     },
     {
 	"neovim/nvim-lspconfig"
+    },
+    {
+	"joshdick/onedark.vim"
     }
   })
