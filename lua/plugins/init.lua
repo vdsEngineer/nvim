@@ -30,17 +30,17 @@ return {
       },
     },
   },
-  {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    lazy = false,
-    config = function()
-      require("codeium").setup({})
-    end
-  },
+  -- {
+  --   "Exafunction/codeium.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   lazy = false,
+  --   config = function()
+  --     require("codeium").setup({})
+  --   end
+  -- },
   {
     "ggandor/leap.nvim",
     lazy = false,
@@ -70,5 +70,12 @@ return {
     "fatih/vim-go",
     ft = "go",
     lazy = false,
+  },
+  {
+    'luozhiya/fittencode.nvim',
+    lazy = false,
+    config = function()
+      require('fittencode').setup()
+    end,
   }
 }
