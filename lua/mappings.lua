@@ -5,14 +5,27 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map({ "i" }, "jj", "<ESC>")
-map({ "n" }, "ss", "<cmd> w <cr>")
+map({ "n" }, "<space>s", "<cmd> w <cr>")
+map({ "n" }, "<space>ta", "<cmd> tabnew <cr>")
+map({ "n" }, "<space>tn", "<cmd> tabNext <cr>")
+map({ "n" }, "<space>tf", "<cmd> tabfirst <cr>")
+map({ "n" }, "<space>tl", "<cmd> tablast <cr>")
 
 local opts = { buffer = bufnr, noremap = true, silent = true }
+
 map('n', 'gD', vim.lsp.buf.declaration, opts)
 map('n', 'gd', vim.lsp.buf.definition, opts)
 map('n', 'K', vim.lsp.buf.hover, opts)
 
+--harpoon
+vim.keymap.set("n", "ha", ':lua require("harpoon.mark").add_file()<CR>')
+vim.keymap.set("n", "hm", ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
+vim.keymap.set("n", "hp", ':lua require("harpoon.ui").nav_prev()<CR>')
+vim.keymap.set("n", "hn", ':lua require("harpoon.ui").nav_next()<CR>')
 
+vim.keymap.set({ 'n', 'x', 'o' }, 'ff', '<Plug>(leap-forward)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'FF', '<Plug>(leap-backward)')
+vim.keymap.set({ 'n', 'x', 'o' }, 'ffg', '<Plug>(leap-from-window)')
 --   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 --   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
 --   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)

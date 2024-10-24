@@ -30,25 +30,10 @@ return {
       },
     },
   },
-  -- {
-  --   "Exafunction/codeium.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   lazy = false,
-  --   config = function()
-  --     require("codeium").setup({})
-  --   end
-  -- },
   {
     "ggandor/leap.nvim",
     lazy = false,
-    config = function()
-      vim.keymap.set({ 'n', 'x', 'o' }, 'ff', '<Plug>(leap-forward)')
-      vim.keymap.set({ 'n', 'x', 'o' }, 'FF', '<Plug>(leap-backward)')
-      vim.keymap.set({ 'n', 'x', 'o' }, 'ffg', '<Plug>(leap-from-window)')
-    end
+    config = function() end
   },
   {
     "ThePrimeagen/harpoon",
@@ -59,11 +44,6 @@ return {
     config = function()
       require("harpoon").setup({})
       require("telescope").load_extension('harpoon')
-
-      vim.keymap.set("n", "ha", ':lua require("harpoon.mark").add_file()<CR>')
-      vim.keymap.set("n", "hm", ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
-      vim.keymap.set("n", "hp", ':lua require("harpoon.ui").nav_prev()<CR>')
-      vim.keymap.set("n", "hn", ':lua require("harpoon.ui").nav_next()<CR>')
     end
   },
   {
@@ -75,7 +55,7 @@ return {
     'luozhiya/fittencode.nvim',
     lazy = false,
     config = function()
-      require('fittencode').setup()
+      require("configs.fittencode")
     end,
   }
 }

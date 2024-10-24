@@ -4,9 +4,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-	theme = "oxocarbon",
-	transparency = true,
+M.base46 = {
 	nvdash = {
 		load_on_startup = true,
 		header = {
@@ -34,6 +32,8 @@ M.ui = {
 			fg = "none",
 		},
 	},
+	theme = "rxyhn",
+	transparency = true,
 }
 
 return M
