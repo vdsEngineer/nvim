@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
     go = { "goimports" },
-    php = { "pint" },
+    php = { "pretty-php" },
   },
 
   format_on_save = {
